@@ -156,7 +156,7 @@ nav i{
     align-items: center;
     justify-content: center;
     backdrop-filter: blur(9px);
-    display: none;
+    /* display: none; */
 }
 
 
