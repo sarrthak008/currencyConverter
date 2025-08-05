@@ -12,7 +12,6 @@ body{
     background-color: #1c1c1c;
     color: whitesmoke;
     overflow-x: hidden;
-    position: relative;
 }
 
 body::-webkit-scrollbar{
@@ -20,26 +19,20 @@ body::-webkit-scrollbar{
 }
 
 nav{
+    width: 95vw;
     height: 7vh;
     display: flex;
     align-items: center;
     justify-content: end;
     position: fixed;
     top: 0;
-    right: 0;
-    padding: 2px;
 }
 nav i{
     font-size: 2em;
-    padding: 1px;
     cursor: pointer;
 }
 
 .usd-container{
-    height: 15vh;
-    width: 100vw;
-    padding: 10px;
-    /* position: fixed; */
 }
 
 .usd-container h4{
@@ -62,10 +55,9 @@ nav i{
 }
 
 .converter-heading-container{
-    height: 7vh;
-    width: 100%;
     display: flex;
     align-items: center;
+
 }
 
 .converter-heading-container span{
@@ -92,6 +84,8 @@ nav i{
     flex-direction: column;
     margin-top: 30px;
     gap: 20px;
+    overflow-x: hidden;
+
 }
 
 .data-iteam{
@@ -103,6 +97,7 @@ nav i{
     align-items: center;
     gap: 10px;   
     border-radius: 9px;
+    overflow: hidden;
 }
 
 .country-logo{
@@ -156,6 +151,7 @@ nav i{
     align-items: center;
     justify-content: center;
     backdrop-filter: blur(9px);
+    overflow-x: hidden;
     /* display: none; */
 }
 
@@ -178,7 +174,7 @@ nav i{
     width: 70px;
     background-color: #68ff68;
     border-radius: 50%;
-    transform: translateY(-15px);
+    transform: translateY(-20px);
     box-shadow: 1px 10px 10px #4b4b4b;
     display: flex;
     align-items: center;
