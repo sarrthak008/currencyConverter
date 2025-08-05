@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Mozilla+Headline:wght@200..700&display=swap');
 
-*{
+* {
     padding: 0;
     margin: 0;
     font-family: "Mozilla Headline", sans-serif;
 }
 
-body{
+body {
     height: 100%;
     width: 100%;
     background-color: #1c1c1c;
@@ -14,11 +14,11 @@ body{
     overflow-x: hidden;
 }
 
-body::-webkit-scrollbar{
+body::-webkit-scrollbar {
     display: none;
 }
 
-nav{
+nav {
     width: 95vw;
     height: 7vh;
     display: flex;
@@ -27,40 +27,40 @@ nav{
     position: fixed;
     top: 0;
 }
-nav i{
+
+nav i {
     font-size: 2em;
     cursor: pointer;
 }
 
-.usd-container{
-}
+.usd-container {}
 
-.usd-container h4{
+.usd-container h4 {
     color: gray;
 }
 
-.usd-container sup{
+.usd-container sup {
     font-size: 20px;
     padding: 10px;
 }
 
-.usd-container h1{
+.usd-container h1 {
     font-size: 4em;
     letter-spacing: 10px;
 }
 
-#convert-show-container{
-    height: 90vh;   
+#convert-show-container {
+    height: 90vh;
     width: 100vw;
 }
 
-.converter-heading-container{
+.converter-heading-container {
     display: flex;
     align-items: center;
 
 }
 
-.converter-heading-container span{
+.converter-heading-container span {
     background-color: #2f2f2f;
     margin-left: 20px;
     padding: 5px 10px;
@@ -68,16 +68,16 @@ nav i{
     display: flex;
     align-items: center;
     gap: 10px;
-    width:100px;
+    width: 100px;
     font-size: 1.2em;
 }
 
-.converter-heading-container span i{
+.converter-heading-container span i {
     background-color: #10ff10;
     border-radius: 50%;
 }
 
-.main-convert-data-container{
+.main-convert-data-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -88,19 +88,19 @@ nav i{
 
 }
 
-.data-iteam{
+.data-iteam {
     height: 50px;
     width: 90vw;
     background-color: #363535;
     padding: 10px;
     display: flex;
     align-items: center;
-    gap: 10px;   
+    gap: 10px;
     border-radius: 9px;
     overflow: hidden;
 }
 
-.country-logo{
+.country-logo {
     height: 40px;
     width: 40px;
     background-color: #262626;
@@ -111,11 +111,12 @@ nav i{
     font-size: 1.4em;
     overflow: hidden;
 }
-.currency-value{
-   font-size: 1.4em;
+
+.currency-value {
+    font-size: 1.4em;
 }
 
-.error-container{
+.error-container {
     height: 150px;
     width: 300px;
     background-color: #424141;
@@ -127,21 +128,21 @@ nav i{
     box-shadow: 20px 20px 50px #000000;
 }
 
-.error-image-container{
+.error-image-container {
     height: 80px;
     width: 80px;
     margin: auto;
     animation: bounse 6s infinite ease-in-out;
 }
 
-.error-image-container img{
+.error-image-container img {
     height: 100%;
     width: 100%;
     object-fit: cover;
     filter: drop-shadow(10px 20px 40px #060606);
 }
 
-.error-component{
+.error-component {
     height: 100vh;
     width: 100vw;
     position: fixed;
@@ -153,10 +154,11 @@ nav i{
     backdrop-filter: blur(9px);
     overflow-x: hidden;
     /* display: none; */
+    z-index: 1000;
 }
 
 
-.currency-converter-openr-container{
+.currency-converter-openr-container {
     height: 7vh;
     width: 100vw;
     display: flex;
@@ -167,9 +169,10 @@ nav i{
     bottom: 0;
     left: 0;
     backdrop-filter: blur(4px);
+    z-index: 10;
 }
 
-.converter-icon-div{
+.converter-icon-div {
     height: 70px;
     width: 70px;
     background-color: #68ff68;
@@ -184,14 +187,182 @@ nav i{
     color: black;
 }
 
+
+.converter-component {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(9px);
+    overflow-x: hidden;
+    z-index: 1000;
+    display: none;
+    transition: all 1s ease-in-out;
+    cursor: pointer;
+}
+
+
+.converter-body {
+    height: 60vh;
+    width: 50vw;
+    background-color: #434242;
+    border-radius: 24px;
+    padding: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.converter-from-body,
+.converter-to-body {
+    height: 45%;
+    width: 95%;
+    background-color: black;
+    border-radius: inherit;
+    padding: 15px;
+    display: flex;
+    position: relative;
+}
+
+.user-label{
+    font-size: 1.1em;
+    color: #b7b7b7;
+}
+
+.user-input {
+    height: 50px;
+    width: 200px;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    outline: none;
+    font-size: 2em;
+    color: whitesmoke;
+    border: none;
+    border-bottom: 4px solid whitesmoke;
+}
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+.select-option{
+    height: 50px;
+    width: 200px;
+    position: absolute;
+    bottom: 0;
+    right:0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.select-option select {
+  background-color: #f5f5f5cc;
+  outline: none;
+  height: 30px;
+  width: 100px;
+  border-radius:  0 25px 25px 0 ;
+  text-align: center;
+  border: none;
+  font-size: 1.2em;
+}
+
+.select-option label{
+    background-color:#f5f5f5cc;
+    border-radius: 25px  0  0 25px ;
+    height: 30px;
+    width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;;
+}
+
+.gradient-top {
+    background-image: linear-gradient(50deg,
+            hsl(0deg 0% 0%) 0%,
+            hsl(117deg 27% 5%) 24%,
+            hsl(116deg 21% 8%) 34%,
+            hsl(121deg 22% 11%) 40%,
+            hsl(122deg 25% 13%) 46%,
+            hsl(123deg 27% 16%) 50%,
+            hsl(124deg 29% 19%) 54%,
+            hsl(124deg 31% 21%) 57%,
+            hsl(125deg 32% 24%) 60%,
+            hsl(125deg 34% 27%) 63%,
+            hsl(126deg 35% 30%) 66%,
+            hsl(126deg 36% 33%) 69%,
+            hsl(127deg 36% 36%) 71%,
+            hsl(127deg 37% 39%) 73%,
+            hsl(127deg 38% 41%) 76%,
+            hsl(127deg 39% 44%) 78%,
+            hsl(128deg 39% 48%) 80%,
+            hsl(128deg 41% 51%) 82%,
+            hsl(128deg 47% 54%) 85%,
+            hsl(128deg 54% 57%) 87%,
+            hsl(129deg 62% 60%) 90%,
+            hsl(129deg 72% 63%) 93%,
+            hsl(129deg 83% 66%) 96%,
+            hsl(129deg 97% 69%) 100%);
+}
+
+.gradient-btm {
+    background-image: linear-gradient(205deg,
+            hsl(0deg 0% 0%) 0%,
+            hsl(129deg 2% 4%) 24%,
+            hsl(129deg 4% 8%) 33%,
+            hsl(129deg 6% 12%) 40%,
+            hsl(129deg 8% 15%) 45%,
+            hsl(129deg 10% 19%) 49%,
+            hsl(129deg 13% 22%) 53%,
+            hsl(129deg 15% 25%) 56%,
+            hsl(129deg 17% 28%) 59%,
+            hsl(129deg 20% 31%) 62%,
+            hsl(129deg 23% 34%) 65%,
+            hsl(129deg 26% 36%) 67%,
+            hsl(129deg 29% 39%) 70%,
+            hsl(129deg 32% 41%) 72%,
+            hsl(129deg 35% 43%) 74%,
+            hsl(129deg 39% 45%) 76%,
+            hsl(129deg 42% 47%) 79%,
+            hsl(129deg 46% 49%) 81%,
+            hsl(129deg 50% 50%) 83%,
+            hsl(129deg 57% 51%) 85%,
+            hsl(129deg 65% 52%) 88%,
+            hsl(129deg 73% 53%) 90%,
+            hsl(129deg 82% 54%) 93%,
+            hsl(129deg 91% 55%) 96%,
+            hsl(129deg 100% 55%) 100%);
+}
+
+
+
 @keyframes bounse {
-     0%{
+    0% {
         transform: translateY(-10px);
-     }
-     50%{
+    }
+
+    50% {
         transform: translateY(20px);
-     }
-     100%{
+    }
+
+    100% {
         transform: translateY(-10px);
-     }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .converter-body {
+        width: 90vw;
+    }
 }

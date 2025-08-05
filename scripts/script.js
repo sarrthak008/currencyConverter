@@ -3,9 +3,26 @@ const FREE_CURRENCY_API = "https://api.freecurrencyapi.com/v1/latest?apikey=fca_
 
 const FRANK_FUTER_API = "https://api.frankfurter.app/latest?from=INR&to=USD"
 
+const currencyCodes = [
+    "AUD", "BGN", "BRL", "CAD", "CHF",
+    "CNY", "CZK", "DKK", "EUR", "GBP",
+    "HKD", "HRK", "HUF", "IDR", "ILS",
+    "INR", "ISK", "JPY", "KRW", "MXN",
+    "MYR", "NOK", "NZD", "PHP", "PLN",
+    "RON", "RUB", "SEK", "SGD", "THB",
+    "TRY", "USD", "ZAR"
+];
+
+
 // selectorss..
 
-let countryContainer = document.querySelector(".main-convert-data-container")
+let countryContainer = document.querySelector(".main-convert-data-container");
+let converterOpenrBtn = document.querySelector(".converter-icon-div");
+let conveterComponent = document.querySelector(".converter-component");
+let converterBody = document.querySelector(".converter-body");
+let selectInp = document.getElementById("from-currency")
+let fromCurrLabel = document.getElementById("from-curr-label")
+// let toCurrLabel = document.getElementById("to-currency-label")
 
 
 
@@ -36,8 +53,39 @@ const loadUSDRate = async () => {
     }
 }
 
-document.addEventListener("DOMContentLoaded", loadUSDRate)
 
+converterOpenrBtn.addEventListener("click", () => {
+    conveterComponent.style.display = "flex"
+})
+
+conveterComponent.addEventListener("click", (e) => {
+    conveterComponent.style.display = "none"
+})
+
+converterBody.addEventListener("click", (e) => {
+    e.stopPropagation()
+})
+
+
+selectInp.addEventListener("change",(e)=>{
+    let countryName = e.target.value
+    fromCurrLabel.innerText = getFlagEmoji(countryName);
+      try {
+        
+      } catch (error) {
+        
+      }
+})
+
+
+const addOptions =()=>{
+   currencyCodes.forEach((curr)=>{
+     let createOpt = document.createElement("option")
+     createOpt.value = curr
+     createOpt.innerText = curr
+     selectInp.appendChild(createOpt)
+   })
+}
 
 
 
@@ -48,3 +96,11 @@ function getFlagEmoji(countryCode) {
     return mainArr.map(char => String.fromCodePoint(char.charCodeAt(0) + 127397))
         .join('');
 }
+
+
+// all dom loadad events 
+
+document.addEventListener("DOMContentLoaded", () => {
+    loadUSDRate()
+    addOptions()
+})
