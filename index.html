@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <script src="./scripts/script.js" defer></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles/styles.css">
+</head>
+
+<body>
+    <nav>
+        <i class="ri-menu-3-fill"></i>
+    </nav>
+    <div>
+        <div class="usd-container">
+            <h4>USD Details</h4>
+            <h1><sup>$</sup>1.00</h1>
+        </div>
+        <div id="convert-show-container">
+            <div class="converter-heading-container">
+                <span><i class="ri-arrow-right-up-line"></i> all</span>
+            </div>
+
+            <div class="main-convert-data-container">
+                <div class="error-component">
+                    <div class="error-container">
+                        <div class="error-image-container">
+                            <img src="./assets/rupee.png">
+                        </div>
+                        <span>loading...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="currency-converter-openr-container"></div>
+</body>
+
+</html>
