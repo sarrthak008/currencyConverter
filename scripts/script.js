@@ -36,7 +36,7 @@ const loadUSDRate = async () => {
     }
 }
 
-// document.addEventListener("DOMContentLoaded", loadUSDRate)
+document.addEventListener("DOMContentLoaded", loadUSDRate)
 
 
 
