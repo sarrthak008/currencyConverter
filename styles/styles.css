@@ -327,12 +327,15 @@ input[type=number]::-webkit-inner-spin-button {
     background-color: #000000;
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 00%;
     z-index: 20000;
     overflow-x:hidden ;
     transition: all 0.8s ease-out;
 }
 
+#sidebar::-webkit-scrollbar{
+    display: none;
+}
 
 .sidebar-header{
     height: 7vh;
@@ -397,9 +400,47 @@ a{
 }
 
 
+#sidebar-footer{
+    width: 90%;
+    bottom:0;
+    height: 150px;
+    padding: 2% 5%;
+    border-top: 2px solid gray;
+}
 
+.api-info-container{
+    height: 90%;
+    width: 90%;
+    background-color: #484747;
+    padding: 10px;
+    border-radius: 4px;
+}
 
+.uses-container{
+    margin-top: 5px;
+    font-size:1em;
+    color: gray;
+}
 
+.indicator-div{
+    width: 200px;
+    background-color: black;
+    height: 10px;
+    border-radius: 10px;
+    margin-top: 2px;
+    overflow: hidden;
+}
+
+.indicator{
+ height: 100%;
+ width: 10%;
+ background-color: #23ff23;
+ display: block;
+}
+
+.uses-container1{
+    margin-top: 20px;
+}
 
 
 .gradient-top {
