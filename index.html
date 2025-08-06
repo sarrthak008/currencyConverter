@@ -6,13 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency Converter</title>
     <script src="./scripts/script.js" defer></script>
+    <link rel="icon" href="./assets/rupee.png">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
 
 <body>
     <nav>
-        <i class="ri-menu-3-fill"></i>
+        <i class="ri-menu-3-fill" id="sidebar-opener"></i>
     </nav>
     <div>
         <div class="usd-container">
@@ -39,33 +40,79 @@
 
     <div class="converter-component">
         <div class="converter-body">
-           <div class="converter-from-body gradient-top">
-               <div>
-                <label for="user-input" class="user-label">amout</label>
-                <br>
-                <input class="user-input" value="1" type="number" id="user-input">
-               </div> 
+            <div class="converter-from-body gradient-top">
+                <div>
+                    <label for="user-input" class="user-label">amout</label>
+                    <br>
+                    <input class="user-input" value="1" type="number" id="user-input">
+                </div>
 
-               <div class="select-option">
-                <label for="from-currency" id="from-curr-label">🇦🇺</label>
-                   <select id="from-currency">
-                    <option>hiii</option>
-                   </select>
-               </div>
-           </div>
+                <div class="select-option">
+                    <label for="from-currency" id="from-curr-label">🇦🇺</label>
+                    <select id="from-currency">
+                        <option value="AUD">AUD</option>
+                    </select>
+                </div>
+            </div>
 
-           <div class="converter-to-body gradient-btm">
-              
-           </div>
+            <div class="converter-to-body gradient-btm">
+                <div>
+                    <div class="output-currency">1</div>
+                </div>
+                <div class="select-option to-curr-select">
+                    <label for="to-currency" id="to-curr-label">🇦🇺</label>
+                    <select id="to-currency">
+                        <option value="AUD">AUD</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="convtert-icon gradient-top ">
+                <i class="ri-arrow-up-down-line"></i>
+            </div>
         </div>
     </div>
 
 
 
     <div class="currency-converter-openr-container">
-         <div class="converter-icon-div">
+        <div class="converter-icon-div">
             <i class="ri-arrow-left-right-line"></i>
-         </div>
+        </div>
+    </div>
+
+
+    <div id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <img src="./assets/rupee.png">
+            </div>
+            <div>
+                <i class="ri-close-fill" id="sidebar-close-icon"></i>
+            </div>
+        </div>
+
+        <div class="sidebar-body">
+            <ul>
+                <li>
+                    <span>About</span>
+                    <p>Welcome to the Currency Converter, a simple and powerful tool that helps users convert between different currencies in real time. Whether you're a traveler, online shopper, or just curious about exchange rates, this app provides accurate and up-to-date conversions using live exchange rate data.</p>
+                </li>
+
+                <li>
+                    <span>Source</span>
+                    <p>Get all Source Code</p>
+                    <a href="https://github.com/sarrthak008/currencyConverter" target="_blank"><i class="ri-github-fill"></i></a>
+                </li>
+
+                <li>
+                    <span>Code & Love</span>
+                    <p>Code & Love By <span class="spl-text">Sarthak</span> </p>
+                </li>
+
+            </ul>
+        </div>
+
     </div>
 </body>
 

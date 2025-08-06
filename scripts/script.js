@@ -22,7 +22,17 @@ let conveterComponent = document.querySelector(".converter-component");
 let converterBody = document.querySelector(".converter-body");
 let selectInp = document.getElementById("from-currency")
 let fromCurrLabel = document.getElementById("from-curr-label")
-// let toCurrLabel = document.getElementById("to-currency-label")
+let toCurrencySelect = document.getElementById("to-currency")
+let toCurrLabel = document.getElementById("to-curr-label")
+let outputValue = document.querySelector(".output-currency")
+let inputValue = document.getElementById("user-input")
+let sidebarOpener = document.getElementById("sidebar-opener");
+let sideBarCloser = document.getElementById("sidebar-close-icon")
+let sidebar = document.querySelector("#sidebar")
+
+
+// outputValue.innerText = "hello"
+
 
 
 
@@ -66,27 +76,73 @@ converterBody.addEventListener("click", (e) => {
     e.stopPropagation()
 })
 
-
-selectInp.addEventListener("change",(e)=>{
+// input change hadel....
+selectInp.addEventListener("change", (e) => {
     let countryName = e.target.value
     fromCurrLabel.innerText = getFlagEmoji(countryName);
-      try {
-        
-      } catch (error) {
-        
-      }
+    loadCurrencyConveterApi()
 })
 
 
-const addOptions =()=>{
-   currencyCodes.forEach((curr)=>{
-     let createOpt = document.createElement("option")
-     createOpt.value = curr
-     createOpt.innerText = curr
-     selectInp.appendChild(createOpt)
-   })
+// output handelchage
+
+toCurrencySelect.addEventListener("change", (e) => {
+    let countryName = e.target.value
+    toCurrLabel.innerText = getFlagEmoji(countryName);
+    loadCurrencyConveterApi()
+})
+
+
+// load currecyConveterapi
+
+const loadCurrencyConveterApi = async () => {
+    try {
+        let fromCurrency = selectInp.value
+        let toCurrency = toCurrencySelect.value
+
+        // console.log(fromCurrency, toCurrency)
+
+        if (fromCurrency == toCurrency) {
+            outputValue.innerText = inputValue.value
+            return
+        } else {
+
+            let response = await fetch(`https://api.frankfurter.app/latest?from=${fromCurrency}&to=${toCurrency}`)
+            // console.log(response);
+            let data = await response.json()
+            outputValue.innerText = (inputValue.value * data.rates[toCurrency]);
+        }
+
+    } catch (error) {
+     console.error(error)
+    }
 }
 
+inputValue.addEventListener("input", () => {
+    loadCurrencyConveterApi()
+})
+
+
+const addOptions = (selectElement) => {
+    currencyCodes.forEach((curr) => {
+        let createOpt = document.createElement("option")
+        createOpt.value = curr
+        createOpt.innerText = curr
+        selectElement.appendChild(createOpt)
+    })
+}
+
+
+
+//hadnel sidebar open close
+
+sidebarOpener.addEventListener("click",()=>{
+   sidebar.style.right= "0"
+})
+
+sideBarCloser.addEventListener("click",()=>{
+     sidebar.style.right= "-100%"
+})
 
 
 // get imagoji from countryName...
@@ -97,10 +153,10 @@ function getFlagEmoji(countryCode) {
         .join('');
 }
 
-
 // all dom loadad events 
 
 document.addEventListener("DOMContentLoaded", () => {
     loadUSDRate()
-    addOptions()
+    addOptions(selectInp)
+    addOptions(toCurrencySelect)
 })
